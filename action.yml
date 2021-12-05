@@ -1,0 +1,12 @@
+on: [push]
+
+jobs:
+  test_job:
+    runs-on: ubuntu-latest
+    name: Test
+    steps:
+      - name: 
+        id: test
+        uses: actions/DockerTest@v1
+      - name: Get the output result
+        run: echo "result ${{ steps.test.outputs.result }}"
